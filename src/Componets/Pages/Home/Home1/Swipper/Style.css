@@ -1,0 +1,19 @@
+.swiper-button-next:after,
+.swiper-rtl {
+  color: #008bd0;
+}
+.swiper-button-prev:after,
+.swiper-rtl {
+  color: #008bd0;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-button-next:after,
+  .swiper-rtl {
+    display: none;
+  }
+  .swiper-button-prev:after,
+  .swiper-rtl {
+    display: none;
+  }
+}
