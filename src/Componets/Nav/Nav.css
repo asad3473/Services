@@ -1,0 +1,22 @@
+li {
+  position: relative;
+}
+li::after {
+  position: absolute;
+  content: '';
+  height: 10%;
+  width: 0%;
+  background-color: #008bd0;
+  transition: 0.5s;
+  bottom: 0;
+  left: 0;
+}
+li:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  li:hover::after {
+    width: 15%;
+  }
+}
