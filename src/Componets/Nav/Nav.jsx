@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Nav/Nav.css';
+
 import logo from '../images/CompanyLogo.png';
 import ShimmerButton from '../Button/ShimmerButton';
 
@@ -13,14 +14,14 @@ const Navbar = () => {
   // Navigation Links Array
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About ' },
     { path: '/services', label: 'Service' },
     { path: '/project', label: 'Project' },
     { path: '/contact', label: 'Contact' },
+    { path: '/about', label: 'About Us' },
   ];
 
   return (
-    <header className='bg-[#fafafa] h-20 sticky z-40 top-0 shadow-md p-3'>
+    <header className='bgColor h-20 sticky z-40 top-0 shadow-md p-3'>
       <nav className='flex items-center justify-between max-w-screen-xl mx-auto h-full px-4 font-ui-sans-serif'>
         {/* Logo */}
         <div className='flex-shrink-0 w-20 h-20'>
@@ -68,11 +69,11 @@ const Navbar = () => {
             } duration-500 w-screen md:top-0 px-4 md:px-0`}
           >
             {navLinks.map(({ path, label }) => (
-              <li key={path} className='relative group'>
+              <li key={path} className='relative group text-white'>
                 <Link
                   onClick={() => setIsOpen(false)}
                   to={path}
-                  className='nav-link flex items-center  py-2 md:py-0 hover:text-[#008bd0] text-lg font-semibold'
+                  className='nav-link flex items-center  py-2 md:py-0 hover:text-[#61dafb] text-lg font-semibold'
                 >
                   {label}
                 </Link>
@@ -83,7 +84,7 @@ const Navbar = () => {
 
         {/* Join Us Button */}
         <div className='flex-shrink-0 hidden md:block'>
-          <Link to={'/contact'} className='bg-[#008bd0] text-white'>
+          <Link to={'/contact'} className=' text-white'>
             <ShimmerButton text={'Contact us'} />
           </Link>
         </div>

@@ -17,7 +17,7 @@ import { TbSeo } from 'react-icons/tb';
 import { SiGoogleads } from 'react-icons/si';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Link, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 
 const servicesData = [
   {
@@ -41,7 +41,7 @@ const servicesData = [
   {
     id: 3,
     icon: <RiFlutterFill size={35} />,
-    title: 'Mobile App Development',
+    title: 'App Development',
     description:
       'I offer professional Flutter development services that enable you to build beautiful, high-performance, and natively compiled applications for mobile, web.',
     link: 'single-services.html',
@@ -158,7 +158,7 @@ const ServicItem = () => {
   // Determine which subset of servicesData to use based on the path
   const displayedServices =
     location.pathname === '/'
-      ? servicesData.slice(0, 6) // Display first 6 items on the home path
+      ? servicesData.slice(0, 4) // Display first 6 items on the home path
       : servicesData; // Display all items otherwise
 
   return (
@@ -171,31 +171,31 @@ const ServicItem = () => {
               <h2 className='text-4xl font-bold '>Our Services</h2>
             </div>
           </div>
-          <div className='flex flex-wrap -mx-4' data-aos='fade-right'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-gradient-to-br from-[#18343b] to-[#fff] text-white rounded-lg p-4 -mx-4 relative w-full ' data-aos='fade-right'>
             {displayedServices.map((service, index) => (
-              <div key={index} className='  w-full md:w-1/2 lg:w-1/3 px-4 mb-8'>
-                <div className='border-[#008bd0]  flex flex-col h-full  p-6 border rounded-lg'>
-                  {/* Background image and overlay */}
-                  <div
-                    className='absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300 group-hover:opacity-40 opacity-0'
-                    style={{ backgroundImage: `url(${service.HovImg})` }}
-                  >
-                    {/* Dark overlay for text readability */}
-                    <div className='absolute inset-0  bg-opacity-50 transition-opacity duration-300'></div>
+              <div key={index} className='relative px-4 mb-8'>
+                <div className='relative flex flex-col h-full sm:h-[20rem] p-6 border border-[#f7f9f9] rounded-lg bg-white text-black shadow-md transition-all group cursor-pointer hover:bg-[#282c34] duration-500 hover:-translate-y-4 hover:shadow-xl '>
+
+                  {/* Icon */}
+                  <div className='relative z-10 flex items-center justify-center mb-4 w-10 p-6 h-10  rounded-full bg-[#040d12]  transition-all ease-in delay-75 group-hover:bg-[#408EF7]'>
+                    <p className='text-white text-xl'>{service.icon}</p>
                   </div>
-                  <div className='relative z-10 flex items-center justify-center mb-4 w-16 h-16 rounded-full bg-[#008bd0] mx-auto'>
-                    <p className='text-white'>{service.icon}</p>
-                  </div>
-                  <h3 className='relative z-10 text-2xl font-semibold mb-4   transition-colors duration-300 text-center'>
+
+                  {/* Title */}
+                  <h3 className='relative z-10 text-xl font-semibold mb-2 text-start transition-all ease-in delay-75 group-hover:text-white'>
                     {service.title}
                   </h3>
-                  <p className='relative z-10 text-gray-600 mb-4  transition-colors duration-300 text-center'>
+
+                  {/* Description */}
+                  <p className='relative z-10 text-gray-700 text-sm text-start transition-all ease-in delay-75 group-hover:text-white'>
                     {service.description}
                   </p>
+
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
     </div>

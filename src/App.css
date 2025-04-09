@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+.btnbg{
+  background-color: #61dafb !important;
+}
+
+.bgColor{
+  background-color: #282c34;
+}
+.textColor{
+  color: #61dafb;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

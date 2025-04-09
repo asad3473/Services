@@ -6,10 +6,11 @@ li::after {
   content: '';
   height: 10%;
   width: 0%;
-  background-color: #008bd0;
+  transform: translate(-50%,50%);
+  background-color:white;
   transition: 0.5s;
   bottom: 0;
-  left: 0;
+  left: 50%;
 }
 li:hover::after {
   width: 100%;
