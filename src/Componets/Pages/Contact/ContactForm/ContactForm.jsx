@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
-import Contact1 from '../../../images/contact.png';
+// import Contact1 from '../../../images/contact.png';
+import { FaLinkedinIn, FaPhone, FaYoutube } from 'react-icons/fa';
+import { MdEmail, MdLocationPin } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   const form = useRef();
@@ -25,80 +28,173 @@ const ContactForm = () => {
       );
   };
 
+
+  const contact = [
+    {
+      icon: <FaPhone />, data: '+92 3051253474'
+    },
+    {
+      icon: <MdEmail />, data: 'asdihere@gmail.com'
+    },
+    {
+      icon: <MdLocationPin />, data: 'Hassan  manzil basement hall goheer town,Bahawalpur'
+    }
+  ]
+
   return (
     <section className=''>
       <div className='mx-auto px-4 font-ui-sans-serif'>
-        <div className='text-center mb-20 mt-20'>
+        <div className='text-center mb-20 mt-10'>
           <h6 className='text-lg font-semibold text-black'>LET’S GET TO WORK</h6>
           <h2 className='text-3xl font-bold text-black'>Contact Us</h2>
         </div>
-        <div className='flex gap-4 flex-col lg:flex-row'>
-          <div className='lg:w-1/2 w-full mb-8 lg:mb-0'>
-            <div className='border border-[#008bd0] shadow-2xl p-8 rounded-lg'>
-              <img
-                src={Contact1}
-                alt='Contact'
-                className='w-full h-auto mb-4 rounded-md'
-              />
-              <p className='text-gray-600 mb-4'>
-                We provide free estimates via email or on-site visits. Our estimates
-                are completely free of charge! Simply fill out the form or reach out
-                to us at{' '}
-                <a href='mailto:support@ideatech.ae' className='text-[#008bd0]'>
-                  support@ideatech.ae
-                </a>
-                , and provide your contact details and address.
-              </p>
-              <p className='text-gray-600'>We look forward to hearing from you!</p>
+        <div className='flex gap-4 h-full flex-col  lg:flex-row'>
+          <div className='relative rounded-md p-2 bg-[#011D2B] w-[50%]  overflow-hidden'>
+            <div className='absolute bottom-10 z-20 right-20 bg-[#52b6f975] h-24 w-24 rounded-full'></div>
+            <div className='absolute -bottom-8 -right-2 bg-[#52b6f975] h-36 w-36 rounded-full'></div>
+            <div className='py-10 px-4 h-full sm:px-10 '>
+              <h1 className='text-white text-4xl font-serif font-semibold mb-4'>Contact Information</h1>
+              <p className='text-gray-300 font-serif mb-8 text-lg'>Feel free to reach out or start a live chat!</p>
+
+              <div className='space-y-4'>
+                {
+                  contact.map((item, index) => (
+                    <div key={index} className='flex items-center gap-4 text-white'>
+                      <span className='text-md text-cyan-400'>{item.icon}</span>
+                      <span className='font-serif text-md'>{item.data}</span>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
+            <div className='flex mt-4 space-x-4 absolute bottom-4 left-4 z-30'>
+
+              {/* Facebook */}
+              <Link to="/">
+                <button className="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white border border-gray-500 shadow-md group transition-all duration-300">
+                  <svg className="relative z-10 fill-gray-900 group-hover:fill-white transition-all duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 72 72" fill="none">
+                    <path d="M46.4927 38.6403L47.7973 30.3588H39.7611V24.9759C39.7611 22.7114 40.883 20.4987 44.4706 20.4987H48.1756V13.4465C46.018 13.1028 43.8378 12.9168 41.6527 12.8901C35.0385 12.8901 30.7204 16.8626 30.7204 24.0442V30.3588H23.3887V38.6403H30.7204V58.671H39.7611V38.6403H46.4927Z" />
+                  </svg>
+                  <div className="absolute top-full left-0 w-full h-full rounded-full bg-blue-500 z-0 transition-all duration-500 group-hover:top-0"></div>
+                </button>
+              </Link>
+
+              {/* LinkedIn */}
+              <Link to="/">
+                <button className="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white border border-gray-500 shadow-md group transition-all duration-300">
+                  <FaLinkedinIn className="relative z-10 text-gray-900 group-hover:text-white transition-all duration-300" size={18} />
+                  <div className="absolute top-full left-0 w-full h-full rounded-full bg-blue-600 z-0 transition-all duration-500 group-hover:top-0"></div>
+                </button>
+              </Link>
+
+              {/* YouTube */}
+              <Link to="/">
+                <button className="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white border border-gray-500 shadow-md group transition-all duration-300">
+                  <FaYoutube className="relative z-10 text-gray-900 group-hover:text-white transition-all duration-300" size={18} />
+                  <div className="absolute top-full left-0 w-full h-full rounded-full bg-red-600 z-0 transition-all duration-500 group-hover:top-0"></div>
+                </button>
+              </Link>
+
+            </div>
+
+
           </div>
+
           {/* Contact Form Section */}
           <div className='lg:w-1/2 w-full'>
             <div className='border border-[#008bd0] shadow-2xl rounded-lg p-8'>
-              <form ref={form} onSubmit={sendEmail} className='space-y-4'>
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    name='user_name'
-                    id='name'
-                    className='form-control w-full p-3 border bg-gray-200 border-gray-300 rounded-md'
-                    required
-                    placeholder='Your Name'
-                  />
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+
+                {/* Name Inputs */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="w-full">
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="First Name"
+                      className="w-full border-b-2 border-gray-300 bg-transparent p-3 focus:outline-none focus:border-blue-500 placeholder-gray-500 transition duration-300"
+                      required
+                    />
+                  </div>
+                  <div className="w-full">
+                    <input
+                      type="text"
+                      name="last_name"
+                      placeholder="Last Name"
+                      className="w-full border-b-2 border-gray-300 bg-transparent p-3 focus:outline-none focus:border-blue-500 placeholder-gray-500 transition duration-300"
+                      required
+                    />
+                  </div>
                 </div>
-                <div className='form-group'>
-                  <input
-                    type='email'
-                    name='user_email'
-                    id='email'
-                    className='form-control w-full bg-gray-200 p-3 border border-gray-300 rounded-md'
-                    required
-                    placeholder='Your Email'
-                  />
+
+                {/* Email & Phone */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="w-full">
+                    <input
+                      type="email"
+                      name="user_email"
+                      placeholder="Email"
+                      className="w-full border-b-2 border-gray-300 bg-transparent p-3 focus:outline-none focus:border-blue-500 placeholder-gray-500 transition duration-300"
+                      required
+                    />
+                  </div>
+                  <div className="w-full">
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      className="w-full border-b-2 border-gray-300 bg-transparent p-3 focus:outline-none focus:border-blue-500 placeholder-gray-500 transition duration-300"
+                    />
+                  </div>
                 </div>
-                <div className='form-group'>
+
+                {/* Radio Category */}
+                <div className="space-y-2">
+                  <p className="text-gray-700 font-semibold">Category:</p>
+                  <div className="flex flex-wrap gap-6">
+                    <label className="flex items-center gap-2 text-gray-700">
+                      <input type="radio" name="category" value="General" required />
+                      General
+                    </label>
+                    <label className="flex items-center gap-2 text-gray-700">
+                      <input type="radio" name="category" value="Support" />
+                      Support
+                    </label>
+                    <label className="flex items-center gap-2 text-gray-700">
+                      <input type="radio" name="category" value="Feedback" />
+                      Feedback
+                    </label>
+                    <label className="flex items-center gap-2 text-gray-700">
+                      <input type="radio" name="category" value="Other" />
+                      Other
+                    </label>
+                  </div>
+                </div>
+
+                {/* Textarea */}
+                <div>
                   <textarea
-                    name='message'
-                    id='message'
-                    className='form-control w-full p-3 border bg-gray-200 border-gray-300 rounded-md'
-                    cols='30'
-                    rows='6'
+                    name="message"
+                    rows="5"
+                    placeholder="Your Message"
+                    className="w-full border-2 border-gray-300 bg-transparent p-3 focus:outline-none focus:border-blue-500 placeholder-gray-500 transition duration-300"
                     required
-                    placeholder='Your Message'
                   ></textarea>
                 </div>
-                <div className='form-group'>
+
+                {/* Submit Button */}
+                <div className="flex justify-end">
                   <button
-                    type='submit'
-                    className={`btn bg-[#008bd0] text-white px-6 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${
-                      isSending ? 'cursor-not-allowed opacity-70' : ''
-                    }`}
+                    type="submit"
+                    className={`bg-gradient-to-br from-[#61dafb] to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 text-white px-6 py-3 rounded-md transition duration-300 hover:bg-[#0c1a21]  ${isSending ? 'cursor-not-allowed opacity-70' : ''}`}
                     disabled={isSending}
                   >
                     {isSending ? 'Sending...' : 'Send Message'}
                   </button>
                 </div>
+
               </form>
+
             </div>
           </div>
         </div>

@@ -1,86 +1,147 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import icon1 from '../../../images/icon-1.jpg';
 import icon2 from '../../../images/icon-2.jpg';
 import icon3 from '../../../images/icon-3.jpg';
 import icon4 from '../../../images/icon-4.jpg';
 import icon5 from '../../../images/icon-5.jpg';
 import icon6 from '../../../images/icon-6.jpg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const whyChooseData = [
   {
     icon: icon6,
     title: 'Custom Developed Software',
     description:
-      'Custom Developed Software, we specialize in creating tailored software solutions that meet the unique needs of your business. We believe that every business is different.',
+      'We specialize in creating tailored software solutions that meet the unique needs of your business.',
   },
   {
     icon: icon1,
     title: 'Protect your Business',
     description:
-      'At Protect Your Business, our mission is to safeguard companies of all sizes against the ever-evolving landscape of risks and challenges. We provide comprehensive business protection services.',
+      'Safeguard companies of all sizes against the ever-evolving landscape of risks and challenges.',
   },
   {
     icon: icon2,
     title: 'Network Monitoring',
     description:
-      'Network Monitoring is dedicated to ensuring the performance, security, and reliability of your IT infrastructure. We provide advanced network monitoring services that allow businesses to maintain.',
+      'Ensuring the performance, security, and reliability of your IT infrastructure.',
   },
- 
- 
   {
     icon: icon5,
     title: 'Dedicated IT Support',
     description:
-      'Dedicated IT Support, we are committed to providing personalized and reliable IT support solutions for businesses of all sizes. We understand that technology is at the heart of your operations.',
+      'Providing personalized and reliable IT support solutions for businesses of all sizes.',
   },
-
   {
     icon: icon3,
     title: 'Network Security',
     description:
-      'Network Security, we specialize in protecting your digital infrastructure against the growing range of cyber threats. Our mission is to secure your business by delivering comprehensive network security.',
+      'Protect your digital infrastructure against the growing range of cyber threats.',
   },
   {
     icon: icon4,
     title: 'Managed IT Service',
     description:
-      'Managed IT Service, we empower businesses by taking the complexity out of technology management. We provide end-to-end IT solutions that are tailored to meet the needs of your business.',
+      'Empowering businesses by taking the complexity out of technology management.',
   },
 ];
 
 const WhyChooseUsHom1 = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
 
   return (
-    <section className='py-16 lg:px-10  font-ui-sans-serif'>
-      <div className='container mx-auto px-4'>
+    <section className='py-14 lg:px-10 font-ui-sans-serif bg-gray-900 relative'>
+      <div className='container mx-auto px-4 relative'>
+        {/* Heading */}
         <div className='text-center mb-12'>
-          <h6 className=' text-4xl font-bold '>Why Partner with Us</h6>
-          <h2 className='text-lg'>Smarter Tech,Stronger Results</h2>
+          <h6 className='text-4xl font-bold text-white'>Why Partner with Us</h6>
+          <h2 className='text-lg text-gray-300'>Smarter Tech, Stronger Results</h2>
         </div>
-        <div className='flex flex-wrap -mx-4 ' data-aos='fade-right'>
+
+        {/* Custom Navigation Icons */}
+        <div className='absolute z-10  flex gap-3 text-white 
+          -bottom-8 left-1/2 transform -translate-x-1/2
+          sm:bottom-8 sm:left-auto sm:right-8 sm:translate-x-0 
+          md:top-14 md:bottom-auto'>
+
+          <div className='swiper-button-prev-custom p-3 bg-gradient-to-br from-[#61dafb] to-blue-500 rounded-full cursor-pointer hover:from-[#59a0b4]'>
+            <FaArrowLeft />
+          </div>
+          <div className='swiper-button-next-custom p-3 bg-gradient-to-br from-[#61dafb] to-blue-500 rounded-full cursor-pointer hover:from-[#59a0b4]'>
+            <FaArrowRight />
+          </div>
+
+        </div>
+
+
+        {/* Swiper */}
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+          }}
+          slidesPerView={3}
+          spaceBetween={30}
+          autoplay={{ delay: 5000 }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className='px-4'
+        >
           {whyChooseData.map((item, index) => (
-            <div key={index} className='w-full cursor-pointer  lg:w-1/3 md:w-1/2 px-4 mb-8'>
-              <div className=' p-6 h-full border rounded-lg  hover:shadow-lg  bg-white text-black shadow-md transition-all group cursor-pointer hover:bg-[#282c34] duration-500 hover:translate-y-4 border-black '>
-                <div className='mb-4'>
-                  <img
-                    src={item.icon}
-                    alt='svg icon'
-                    className='w-12 h-12  rounded-full'
-                  />
+            <SwiperSlide key={index}>
+              <div
+                onClick={() => setActiveCard(item)}
+                className='flex flex-col justify-between h-full p-6 bg-black border border-white/20 rounded-lg backdrop-blur-md text-white shadow-md ease-in transition-all duration-500 hover:bg-gradient-to-br hover:from-[#61dafb]/30 hover:bg-[#008bd0] hover:-translate-y-2 hover:shadow-xl group cursor-pointer'
+                data-aos='fade-up'
+              >
+                <div>
+                  <div className='mb-4'>
+                    <img src={item.icon} alt='icon' className='w-12 h-12 rounded-full' />
+                  </div>
+                  <h3 className='text-2xl font-semibold mb-4 text-start group-hover:text-black'>
+                    {item.title}
+                  </h3>
+                  <p className='text-start group-hover:text-black'>{item.description}</p>
                 </div>
-                <h3 className='text-2xl font-semibold mb-4 text-start text-black ease-in duration-500 group-hover:text-white'>
-                  {item.title}
-                </h3>
-                <p className='  text-start  text-black ease-in duration-500 group-hover:text-white'>{item.description}</p>
               </div>
-            </div>
+            </SwiperSlide>
+
           ))}
-        </div>
+        </Swiper>
+
+        {/* Full Description Modal */}
+        {activeCard && (
+          <div className='fixed inset-0 bg-black h-full bg-opacity-80 flex items-center justify-center z-50'>
+            <div className='bgColor text-white p-6 rounded-lg max-w-lg w-full relative'>
+              <button
+                className='absolute top-2 right-2 text-xl text-white hover:text-red-600'
+                onClick={() => setActiveCard(null)}
+              >
+                &times;
+              </button>
+              <img src={activeCard.icon} alt='icon' className='w-14 h-14 mb-4 rounded-full' />
+              <h3 className='text-2xl font-bold mb-2'>{activeCard.title}</h3>
+              <p className='text-white'>{activeCard.description}</p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

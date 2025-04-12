@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import aboutImage from '../../../images/about.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Item from 'antd/es/list/Item';
-import { FaArrowRight } from 'react-icons/fa';
+// import Item from 'antd/es/list/Item';
+import { FaArrowRight, FaHeadphones, FaUser } from 'react-icons/fa';
 const AboutHome1 = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -16,9 +16,14 @@ const AboutHome1 = () => {
     <section className=' py-2 lg:px-10 font-ui-sans-serif'>
       <div className='container mx-auto px-4 ' data-aos='fade-right'>
         <div className='flex flex-wrap items-center'>
-        <div className='w-full lg:w-1/2 px-4'>
-            <div className='rounded-lg overflow-hidden shadow-lg'>
+          <div className='w-full lg:w-1/2 px-4'>
+            <div className='rounded-lg overflow-hidden shadow-lg relative'>
               <img src={aboutImage} alt='About us' className='w-full h-auto' />
+              <div className='absolute right-0 bg-gradient-to-br from-[#61dafb] to-blue-500 top-2 flex justify-center items-center flex-col  sm:h-20 sm:w-20 h-14 w-12 text-xl rounded-full'>
+                <FaHeadphones className='text-xl sm:text-3xl text-black'/>
+                <FaUser className=' -mt-3 text-xl sm:text-3xl text-white'/>
+              </div>
+
             </div>
           </div>
           <div className='w-full lg:w-1/2 px-4'>
@@ -37,7 +42,7 @@ const AboutHome1 = () => {
                 {
                   array.map((Item, index) => (
                     <div key={index} className=' mt-3 cursor-pointer group flex  justify-start items-center gap-2 mb-2'>
-                      <span className=' text-xs transform -translate-x-1 group-hover:translate-x-1 transition-all ease-in delay-75'><FaArrowRight/></span>
+                      <span className=' text-xs transform -translate-x-1 group-hover:translate-x-1 transition-all ease-in delay-75'><FaArrowRight /></span>
                       <span className=''>{Item}</span>
                     </div>
                   ))
@@ -46,7 +51,7 @@ const AboutHome1 = () => {
 
             </div>
           </div>
-        
+
         </div>
       </div>
     </section>

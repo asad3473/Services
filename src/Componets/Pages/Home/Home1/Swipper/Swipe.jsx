@@ -5,7 +5,7 @@ import ShimmerButton from '../../../../Button/ShimmerButton'
 export default function Swipe() {
     return (
         <div className='bg-white'>
-            <div className='container flex flex-col sm:flex-row justify-center gap-28 items-center relative py-6'>
+            <div className='container flex flex-col sm:flex-row justify-center gap-28 items-center relative py-4'>
                 <div className='w-full sm:w-5/12  text-center sm:text-left'>
                     <h1 className='text-3xl sm:text-5xl font-semibold mb-2'>
                         We Are a Full-Service<br />

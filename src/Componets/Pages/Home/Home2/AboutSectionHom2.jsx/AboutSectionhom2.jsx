@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaUser } from 'react-icons/fa';
 const AboutSection = () => {
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 5000 });
   }, []);
   return (
     <section className='  about-area py-12 lg:px-16 font-ui-sans-serif'>
@@ -33,10 +34,11 @@ const AboutSection = () => {
                   <h6 className='flex justify-between items-center '>
                     IT Consulting <em className='text-gray-600'>90%</em>
                   </h6>
-                  <div className='w-full  rounded-full h-2.5 mt-2'>
+                  <div className='w-full  rounded-full bgColor h-2.5 mt-2 overflow-hidden'>
                     <div
-                      className='bg-[#008bd0] h-1.5 rounded-full'
+                      className='bg-gradient-to-br from-[#61dafb] to-blue-500 h-full rounded-full'
                       style={{ width: '90%' }}
+                       data-aos='fade-right'
                     ></div>
                   </div>
                 </div>
@@ -44,10 +46,11 @@ const AboutSection = () => {
                   <h6 className='flex justify-between items-center '>
                     Virtual Workstation <em className='text-gray-600'>75%</em>
                   </h6>
-                  <div className='w-full bg-gray-200 rounded-full h-2.5 mt-2'>
+                  <div className='w-full bgColor rounded-full h-2.5 mt-2 overflow-hidden'>
                     <div
-                      className='bg-[#008bd0] h-1.5 rounded-full'
+                      className='bg-gradient-to-br from-[#61dafb] to-blue-500 h-full rounded-full'
                       style={{ width: '75%' }}
+                       data-aos='fade-right'
                     ></div>
                   </div>
                 </div>
@@ -55,10 +58,11 @@ const AboutSection = () => {
                   <h6 className='flex justify-between items-center '>
                     Managed IT Service <em className='text-gray-600'>80%</em>
                   </h6>
-                  <div className='w-full bg-gray-200 rounded-full h-2.5 mt-2'>
+                  <div className='w-full bgColor rounded-full h-2.5 mt-2 overflow-hidden'>
                     <div
-                      className='bg-[#008bd0] h-1.5 rounded-full'
+                      className='bg-gradient-to-br from-[#61dafb] to-blue-500 h-full rounded-full'
                       style={{ width: '80%' }}
+                      data-aos='fade-right'
                     ></div>
                   </div>
                 </div>
@@ -66,9 +70,9 @@ const AboutSection = () => {
             </div>
           </div>
           <div className='w-full lg:w-5/12 lg:ml-auto md:w-full mt-12 lg:mt-0'>
-            <div className='contact-section bg-[#0070a7] border p-8 rounded-lg shadow-md'>
-              <h3 className='text-2xl font-semibold text-white '>
-                Free Consultation
+            <div className='contact-section bg-gradient-to-br from-[#61dafb] to-blue-500 border p-8 rounded-lg shadow-md'>
+              <h3 className='text-2xl flex  items-center gap-2 font-semibold text-black'>
+                Free Consultation <FaUser className=' text-white'/>
               </h3>
               <div className='contact-form mt-6'>
                 <form
@@ -77,13 +81,13 @@ const AboutSection = () => {
                   action='mail.php'
                   method='POST'
                 >
-                  <div className='space-y-4'>
+                  <div className='space-y-6'>
                     <div className='form-group'>
                       <input
                         type='text'
                         name='name'
                         id='name'
-                        className='form-control w-full p-3 border bg-gray-200  border-gray-300 rounded'
+                        className='form-control w-full px-3 py-2 bg-transparent border-b-2 border-white placeholder-white focus:outline-none focus:border-black transition duration-300'
                         required
                         placeholder='Your Name'
                       />
@@ -93,7 +97,7 @@ const AboutSection = () => {
                         type='email'
                         name='email'
                         id='email'
-                        className='form-control w-full p-3 border bg-gray-200 border-gray-300 rounded'
+                        className='form-control w-full px-3 py-2 bg-transparent border-b-2 border-white placeholder-white focus:outline-none focus:border-black transition duration-300'
                         required
                         placeholder='Your Email'
                       />
@@ -103,7 +107,7 @@ const AboutSection = () => {
                         type='text'
                         name='phone'
                         id='phone'
-                        className='form-control w-full p-3 border bg-gray-200 border-gray-300 rounded'
+                        className='form-control w-full px-3 py-2 bg-transparent border-b-2 border-white placeholder-white focus:outline-none focus:border-black transition duration-300'
                         required
                         placeholder='Your Phone'
                       />
@@ -111,27 +115,29 @@ const AboutSection = () => {
                     <div className='form-group'>
                       <textarea
                         name='message'
-                        className='form-control w-full p-3 border bg-gray-200 border-gray-300 rounded'
                         id='message'
                         cols='30'
                         rows='5'
                         required
                         placeholder='Your Message'
+                        className='form-control w-full px-3 py-2 bg-transparent border-2 border-white placeholder-white focus:outline-none focus:border-black transition duration-300 resize-none'
                       ></textarea>
                     </div>
                     <div className='form-group'>
                       <button
                         type='submit'
-                        className='btn btn-primary w-32 bg-[#121225] text-white  py-3 rounded'
+                        className='w-32 bg-gradient-to-r from-[#121225] to-[#1a1a3c] hover:from-[#61dafb]  hover:to-blue-400 text-white hover:text-black py-3 rounded transition-all  duration-500 shadow-md'
                       >
                         Send Message
                       </button>
+
                     </div>
                   </div>
                 </form>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

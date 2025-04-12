@@ -20,19 +20,14 @@ function App() {
           <Route path='/project' element={<Project />} />
           <Route path='/services' element={<ServiceSection />} />
           <Route path='/about' element={<About />} />
-          {/* <Route path='/view-service' element={<ServiceSection />} /> */}
+          <Route path='/view-service' element={<ServiceSection />} />
           <Route path='/terms-condition' element={<TermAndConditions />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         </Routes>
         <ScrollToTop
           smooth
-          color='#f29f67'
-          style={{
-            backgroundColor: '#1e1e2c',
-            borderRadius: '80px',
-            display: 'grid',
-            placeItems: 'center',
-          }}
+          color='white'
+          className='bg-gradient-to-br from-[#61dafb] to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 grid place-items-center rounded-[50%]'
         />
       </BrowserRouter>
     </>

@@ -1,18 +1,20 @@
 li {
   position: relative;
 }
-li::after {
+
+.li::after {
   position: absolute;
   content: '';
   height: 10%;
   width: 0%;
-  transform: translate(-50%,50%);
-  background-color:white;
+  transform: translate(-50%, 50%);
+  background-color: white;
   transition: 0.5s;
   bottom: 0;
   left: 50%;
 }
-li:hover::after {
+
+.li:hover::after {
   width: 100%;
 }
 
