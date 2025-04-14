@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import backgroundImage2 from './../../../images/frontimg2.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const HomeWell2 = () => {
   useEffect(() => {
@@ -20,7 +21,7 @@ const HomeWell2 = () => {
     >
       {/* Overlay */}
       <div
-        className='absolute inset-0 font-ui-sans-serif bg-[#121225] opacity-60'
+        className='absolute inset-0 font-ui-sans-serif bg-[#36527e] opacity-60'
         aria-hidden='true'
       ></div>
 
@@ -35,13 +36,19 @@ const HomeWell2 = () => {
           We are passionate about bringing enterprise-level productivity,
           scalability, and security to small and medium businesses.
         </p>
-        <div className='flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0'>
-          <button className='bg-[#008bd0] p-2 md:p-3 w-32 md:w-40 text-white rounded-full font-bold'>
-            How Its Work
-          </button>
-          <button className='bg-[#008bd0] p-2 md:p-3 w-32 md:w-40 text-white rounded-full font-bold'>
-            Contact Us
-          </button>
+        <div className='space-x-3'>
+          <Link to='/about'>
+            <button className='w-32 bg-gradient-to-r from-[#121225] to-[#1a1a3c] hover:from-[#61dafb]  hover:to-blue-400 text-white hover:text-black py-3 rounded transition-all  duration-500 shadow-md'>
+              How it's work
+            </button>
+
+          </Link>
+          <Link to='/contac'>
+            <button className='w-32 bg-gradient-to-r from-[#61dafb] to-blue-400 hover:from-[#121225] hover:to-[#1a1a3c] text-black hover:text-white py-3 rounded transition-all duration-500 shadow-md'>
+              Contact us
+            </button>
+
+          </Link>
         </div>
       </div>
     </div>

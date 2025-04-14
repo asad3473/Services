@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../../../../images/freelancing.jpg';
 import ShimmerButton from '../../../../Button/ShimmerButton';
+import { Link } from 'react-router-dom';
 
 export default function Swipe() {
     return (
@@ -19,7 +20,7 @@ export default function Swipe() {
                     <p className='mb-4 text-sm sm:text-base lg:text-lg text-gray-700'>
                         From stunning websites and powerful mobile apps to results-driven SEO, strategic social media, and complete branding solutions — we empower your business to thrive in the digital age.
                     </p>
-                    <ShimmerButton text={'Get in touch'} />
+                    <Link to='/services'><ShimmerButton text={'Get in touch'} /></Link>
                 </div>
 
                 {/* Right Image Section */}

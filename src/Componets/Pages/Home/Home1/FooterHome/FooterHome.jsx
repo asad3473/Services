@@ -90,11 +90,11 @@ const FooterHome = () => {
             <div>
               <h5 className="text-lg font-semibold mb-3">Contact Info</h5>
               <p className="text-sm mb-2 font-medium">
-                Bin Dasmal Building, Al Quoz Industrial 1 Dubai, UAE
+                29 Michelson road Westwood Boksburg,1459,South Africa
               </p>
               <p className="font-semibold mt-2">Email:</p>
               <Link to="mailto:support@ideatech.ae" className="text-sm hover:underline">
-                support@ideatech.ae
+                info@nasateck.com
               </Link>
             </div>
           </div>
@@ -104,7 +104,7 @@ const FooterHome = () => {
         <div className="mt-10 pt-4 border-t border-white/30 text-sm flex flex-col sm:flex-row justify-between items-center gap-2">
           <p>
             © 2024 - All Rights Reserved -{' '}
-            <span className="font-semibold">SKY INNOVATIONS IT SERVICES L.L.C</span>
+            <span className="font-semibold">NASA TECK INNOVATIONS IT SERVICES</span>
           </p>
           <div className="flex gap-4">
             <Link to="/terms-condition" className="hover:underline">

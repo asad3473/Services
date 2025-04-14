@@ -120,8 +120,8 @@ const ProjectHome2 = () => {
                     style={{ backgroundImage: `url(${project.backgroundImage})` }}
                   >
                     <div className='absolute inset-0 transition-all group-hover:bg-opacity-100 ease-in duration-500 bg-[#18354b] bg-opacity-70 rounded-lg text-white'></div>
-                    <div className='relative py-4 px-4 text-justify text-white'>
-                      <h3 className='text-sm md:text-lg font-semibold mb-2 text-start'>{project.title}</h3>
+                    <div className='absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4'>
+                      <h3 className='text-sm md:text-lg font-semibold mb-2'>{project.title}</h3>
                       <p className='text-sm md:text-base'>{project.para}</p>
                     </div>
                   </motion.div>
@@ -149,8 +149,8 @@ const ProjectHome2 = () => {
                   <Link
                     onClick={() => setSelectedCategory(category)}
                     className={`${selectedCategory === category
-                        ? 'text-blue-500 font-semibold underline'
-                        : ''
+                      ? 'text-blue-500 font-semibold underline'
+                      : ''
                       }`}
                   >
                     {category}

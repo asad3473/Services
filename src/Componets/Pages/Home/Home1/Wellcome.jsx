@@ -17,7 +17,7 @@ const Wellcome = () => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div
-        className='absolute inset-0  bg-[#121225]  opacity-75'
+        className='absolute inset-0  bg-[#36527e]  opacity-75'
         aria-hidden='true'
       ></div>
       <div
@@ -29,27 +29,28 @@ const Wellcome = () => {
           data-aos='flip-up'
         >
           Welcome To{' '}
-          <span className='text-[#008bd0]'>
+          <span className='text-[#61dafb]'>
             {' '}
-            SKY INNOVATIONS IT SERVICES L.L.C{' '}
+            NASA TECK INNOVATIONS IT SERVICES {' '}
           </span>
-          Turn Ideas Into Reality
+          Transforming Ideas into Powerful Solutions
         </h1>
 
         <h3 className='text-white text-sm md:text-lg font-ui-sans-serif lg:text-lg'>
-          Success is multifaceted concept that varies widely depending on
-          individual goals, values, and context.
+          Success is personal—defined by your goals, values, and journey
         </h3>
         <div className='space-x-3'>
           <Link to='/contact'>
-            <button className='bg-[#008bd0] p-2 md:p-3 w-32 md:w-40 text-white rounded-full font-bold'>
+            <button className='w-32 bg-gradient-to-r from-[#121225] to-[#1a1a3c] hover:from-[#61dafb]  hover:to-blue-400 text-white hover:text-black py-3 rounded transition-all  duration-500 shadow-md'>
               Contact Us
             </button>
+
           </Link>
           <Link to='/services'>
-            <button className='bg-[#008bd0] p-2 md:p-3 w-32 md:w-40 text-white rounded-full font-bold'>
+            <button className='w-32 bg-gradient-to-r from-[#61dafb] to-blue-400 hover:from-[#121225] hover:to-[#1a1a3c] text-black hover:text-white py-3 rounded transition-all duration-500 shadow-md'>
               Services
             </button>
+
           </Link>
         </div>
       </div>

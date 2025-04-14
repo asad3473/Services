@@ -20,7 +20,7 @@ const Swiiper = () => {
       slidesPerView={1}
       navigation
       autoplay={{
-        delay: 4500, // Delay in ms
+        delay: 5000, // Delay in ms
         disableOnInteraction: false, // Continue autoplay after user interaction
       }}
     >

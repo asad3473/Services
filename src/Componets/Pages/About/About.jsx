@@ -9,12 +9,12 @@ import CounterArea from '../Home/Home2/CounterArea/CounterArea'
 const About = () => {
   return (
     <>
-      <PageTitle title="About Us"  Sub="About"/>
-       <AboutHome1/>
-        <WhyChooseUsHom1/>
-         <AboutSection/>
-          <CounterArea/>
-        <FooterHome/>
+      <PageTitle title="About Us" Sub="About" />
+      <AboutHome1 />
+      <WhyChooseUsHom1 />
+      <AboutSection />
+      <CounterArea />
+      <FooterHome />
     </>
   )
 }
