@@ -1,5 +1,6 @@
 import React from 'react';
 import ShimmerButton from '../../../../Button/ShimmerButton';
+import { Link } from 'react-router-dom';
 
 const ConsultationSection = () => {
   return (
@@ -12,9 +13,9 @@ const ConsultationSection = () => {
             </h2>
             <p className=' mb-6'>
             Request your free business consultation to learn more about our services.</p>
-            <a href='mailto:support@ideatech.ae' className=''>
+            <Link to='/contact' className=''>
               <ShimmerButton text={'Let’s Talk Now'} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

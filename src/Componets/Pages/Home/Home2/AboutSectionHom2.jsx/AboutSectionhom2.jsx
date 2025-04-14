@@ -7,7 +7,7 @@ const AboutSection = () => {
     AOS.init({ duration: 5000 });
   }, []);
   return (
-    <section className='  about-area py-12 lg:px-16 font-ui-sans-serif'>
+    <section className='about-area py-12 lg:px-16 font-ui-sans-serif'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-wrap items-center' data-aos='fade-right'>
           <div className='w-full lg:w-6/12 md:w-full'>

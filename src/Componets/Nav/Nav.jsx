@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Nav/Nav.css';
 
-import logo from '../images/CompanyLogo.png';
+import logo from '../images/Logo.png';
 import ShimmerButton from '../Button/ShimmerButton';
 
 const Navbar = () => {
@@ -24,9 +24,9 @@ const Navbar = () => {
     <header className='bgColor h-20 sticky z-40 top-0 shadow-md p-3'>
       <nav className='flex items-center justify-between max-w-screen-xl mx-auto h-full px-4 font-ui-sans-serif'>
         {/* Logo */}
-        <div className='flex-shrink-0 w-20 h-20'>
+        <div className='flex-shrink-0  h-16 w-16 '>
           <Link to='/'>
-            <img src={logo} alt='Sky innovation logo' />
+            <img src={logo} alt='Sky innovation logo' className=' h-full w-full ' />
           </Link>
         </div>
 

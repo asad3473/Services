@@ -31,10 +31,10 @@ const AboutHome1 = () => {
               <h6 className='text-lg text-[#008bd0]'>
                 {/* SKY INNOVATIONS IT SERVICES L.L.C */}
               </h6>
-              <h2 className='text-4xl font-bold mt-4 '>
+              <h2 className='text-2xl sm:text-4xl font-bold mt-4 '>
                 We design, develop, implement and support IT Systems{' '}
               </h2>
-              <p className=' mt-6'>
+              <p className=' mt-2'>
                 We specialize in designing, developing, and supporting intelligent IT solutions tailored to meet your unique business needs. With a perfect blend of creativity, cutting-edge technology, and a customer-first mindset, we turn ideas into impactful, scalable products.
               </p>
 

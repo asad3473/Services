@@ -167,7 +167,7 @@ const ServicItem = () => {
           >
             {displayedServices.map((service, index) => (
               <div key={index} className='relative mb-8'>
-                <div className='relative flex flex-col h-full sm:h-[18rem] p-6 border border-white/20 rounded-lg bg-[#282c34] backdrop-blur-md text-white shadow-md transition-all group hover:bg-white/10 duration-500 hover:-translate-y-4 hover:shadow-xl'>
+                <div className='relative flex flex-col h-[16rem] p-3 border border-white/20 rounded-lg bg-[#282c34] backdrop-blur-md text-white shadow-md transition-all group hover:bg-white/10 duration-500 hover:-translate-y-4 hover:shadow-xl'>
                   <div className='relative z-10 flex items-center justify-center mb-4 w-10 p-6 h-10 rounded-full bg-[#408EF7] group-hover:bg-black transition-all'>
                     <p className='text-white text-xl'>{service.icon}</p>
                   </div>
@@ -179,7 +179,7 @@ const ServicItem = () => {
                   </p>
                   <button
                     onClick={(e) => handleSeeMoreClick(e, service)}
-                    className='px-2 py-2 w-7/12 bg-blue-400 rounded-3xl mt-3 group-hover:bg-black'
+                    className='px-2 py-2 w-6/12 sm:w-6/12 lg:w-4/12 bg-blue-400 rounded-3xl mt-3 group-hover:bg-black'
                   >
                     See more
                   </button>
@@ -190,7 +190,7 @@ const ServicItem = () => {
 
           {/* Modal */}
           {isModalOpen && selectedService && (
-            <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-2">
               <div className="bg-gradient-to-br from-[#61dafb] to-blue-500 w-full max-w-4xl max-h-[90vh] rounded-lg shadow-xl text-black relative p-4 overflow-y-auto">
                 {/* Close Button */}
                 <button

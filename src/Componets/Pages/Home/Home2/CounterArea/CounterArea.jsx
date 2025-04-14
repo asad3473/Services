@@ -1,56 +1,101 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import ceo from '../../../../images/ceo.jpeg';
+import waseem from '../../../../images/waseem.png';
+import mughees from '../../../../images/mughees.jpeg';
+import nicole from '../../../../images/nicole.jpeg';
 import 'aos/dist/aos.css';
-// Sample data for counters
-const counters = [
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+
+// Team Data
+const teamMembers = [
   {
     id: 1,
-    number: '20',
-    unit: '+',
-    heading: 'Years In Business',
+    name: 'Muhammad Asif',
+    role: 'Ceo & Founder',
+    image: ceo,
+    socials: {
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
+    },
   },
   {
     id: 2,
-    number: '1.2',
-    unit: 'k',
-    heading: 'Projects Completed',
-  },
-  {
-    id: 3,
-    number: '750',
-    unit: '+',
-    heading: 'Reviews',
+    name: 'Waseem Malik',
+    role: 'Operational Manager',
+    image: waseem,
+    socials: {
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
+    },
   },
   {
     id: 4,
-    number: '150',
-    unit: '+',
-    heading: 'Team Members',
+    name: 'Nicole Oosthuizen',
+    role: 'Sales Manager',
+    image: nicole,
+    socials: {
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
+    },
   },
+  {
+    id: 3,
+    name: 'Mughees Ur Rehman',
+    role: 'Devops & Cloud Engineer',
+    image: mughees,
+    socials: {
+      facebook: '#',
+      twitter: '#',
+      linkedin: '#',
+    },
+  },
+
 ];
 
-const CounterArea = () => {
+const TeamArea = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
-
   }, []);
+
   return (
-    <section className="py-10 bgColor font-ui-sans-serif">
-      <div className="container mx-auto px-4 relative">
-        <div className='absolute bottom-6 z-20 right-16 bg-[#52b6f975] h-20 w-20 rounded-full'></div>
-        <div className='absolute -bottom-10 right-0 bg-[#52b6f975] h-28 w-28 rounded-full'></div>
-        <div className="flex flex-wrap -mx-4" data-aos="fade-up">
-          {counters.map(counter => (
-            <div key={counter.id} className="w-full lg:w-1/4 md:w-1/2 px-4 mb-8">
-              <div className=" p-6 rounded-lg ">
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold text-white">
-                    <span className="counter-number">{counter.number}</span>
-                    <span>{counter.unit}</span>
-                  </h2>
-                  <h3 className="text-xl font-semibold text-white mt-2">
-                    {counter.heading}
-                  </h3>
+    <section className="py-4  font-ui-sans-serif">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 " data-aos="fade-up">
+          Meet Our Team
+        </h2>
+
+        <div className="flex flex-wrap cursor-pointer -mx-4 justify-center" data-aos="fade-up">
+          {teamMembers.map(member => (
+            <div key={member.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-10">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition duration-300 ease-in-out">
+                {/* Image */}
+                <div className="relative h-72 overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-[#181e29bb] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                    <a href={member.socials.facebook} className="text-white hover:text-[#52b6f9]">
+                      <FaFacebookF size={20} />
+                    </a>
+                    <a href={member.socials.twitter} className="text-white hover:text-[#52b6f9]">
+                      <FaTwitter size={20} />
+                    </a>
+                    <a href={member.socials.linkedin} className="text-white hover:text-[#52b6f9]">
+                      <FaLinkedinIn size={20} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Text Content */}
+                <div className="text-center p-5 bg-[#181e29]">
+                  <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+                  <p className="text-[#52b6f9] mt-1">{member.role}</p>
                 </div>
               </div>
             </div>
@@ -61,4 +106,4 @@ const CounterArea = () => {
   );
 };
 
-export default CounterArea;
+export default TeamArea;

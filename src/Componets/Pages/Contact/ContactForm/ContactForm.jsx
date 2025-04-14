@@ -31,37 +31,37 @@ const ContactForm = () => {
 
   const contact = [
     {
-      icon: <FaPhone />, data: '+92 3051253474'
+      icon: <FaPhone />, data: '+27 78 888 1881'
     },
     {
-      icon: <MdEmail />, data: 'asdihere@gmail.com'
+      icon: <MdEmail />, data: 'info@nasateck.com'
     },
     {
-      icon: <MdLocationPin />, data: 'Hassan  manzil basement hall goheer town,Bahawalpur'
+      icon: <MdLocationPin />, data: '29 Michelson road Westwood Boksburg,1459,South Africa'
     }
   ]
 
   return (
     <section className=''>
       <div className='mx-auto px-4 font-ui-sans-serif'>
-        <div className='text-center mb-20 mt-10'>
+        <div className='text-center mb-8 mt-2'>
           <h6 className='text-lg font-semibold text-black'>LET’S GET TO WORK</h6>
           <h2 className='text-3xl font-bold text-black'>Contact Us</h2>
         </div>
         <div className='flex gap-4 h-full flex-col  lg:flex-row'>
-          <div className='relative rounded-md p-2 bg-[#011D2B] w-[50%]  overflow-hidden'>
-            <div className='absolute bottom-10 z-20 right-20 bg-[#52b6f975] h-24 w-24 rounded-full'></div>
-            <div className='absolute -bottom-8 -right-2 bg-[#52b6f975] h-36 w-36 rounded-full'></div>
-            <div className='py-10 px-4 h-full sm:px-10 '>
-              <h1 className='text-white text-4xl font-serif font-semibold mb-4'>Contact Information</h1>
-              <p className='text-gray-300 font-serif mb-8 text-lg'>Feel free to reach out or start a live chat!</p>
+          <div className='relative rounded-md p-2 bg-[#011D2B] w-full sm:w-[50%]  overflow-hidden'>
+            <div className='absolute bottom-2 sm:bottom-10 z-20 right-10 sm:right-20 bg-[#52b6f975] h-16 w-16 sm:h-24 sm:w-24 rounded-full'></div>
+            <div className='absolute -bottom-8 -right-2 bg-[#52b6f975] w-20 h-20 sm:h-36 sm:w-36 rounded-full'></div>
+            <div className='py-10 px-4 w-full h-full sm:px-10 '>
+              <h1 className='text-white text-xl sm:text-4xl font-serif font-semibold mb-4'>Contact Information</h1>
+              <p className='text-gray-300 font-serif mb-8 text-md sm:text-lg'>Feel free to reach out or start a live chat!</p>
 
-              <div className='space-y-4'>
+              <div className='space-y-4 sm:mb-0 mb-4'>
                 {
                   contact.map((item, index) => (
                     <div key={index} className='flex items-center gap-4 text-white'>
                       <span className='text-md text-cyan-400'>{item.icon}</span>
-                      <span className='font-serif text-md'>{item.data}</span>
+                      <span className='font-serif text-xs sm:text-md'>{item.data}</span>
                     </div>
                   ))
                 }
@@ -199,7 +199,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <div className='w-full h-96 mt-20 overflow-hidden rounded-lg shadow-lg'>
+      <div className='w-full h-96 mt-10 mb-4 overflow-hidden rounded-lg shadow-lg'>
         <iframe
           src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55866.687516542006!2d55.1628175716358!3d25.128809467448605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bdae09bddcb%3A0x615f41be25b33bae!2sBin%20Dasmal!5e0!3m2!1sen!2sbd!4v1735386942576!5m2!1sen!2sbd'
           width='100%'

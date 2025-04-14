@@ -48,7 +48,7 @@ const ProjectHom1 = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <section id='project' className=' py-16 lg:px-10 font-ui-sans-serif'>
+    <section id='project' className=' py-4  lg:px-10 font-ui-sans-serif'>
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
           <h6 className='text-lg '>Featured Works</h6>
