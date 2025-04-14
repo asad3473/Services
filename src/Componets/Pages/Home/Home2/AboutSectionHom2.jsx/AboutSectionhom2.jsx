@@ -14,18 +14,18 @@ const AboutSection = () => {
             <div className='about-content'>
               <h6 className='text-lg font-semibold text-[#008bd0]'>
                 {' '}
-                SKY INNOVATIONS IT SERVICES L.L.C
+                NASA TECK INNOVATIONS IT SERVICES 
               </h6>
               <h2 className='text-3xl lg:text-4xl font-bold mt-4 '>
                 We design, develop, implement and support IT Systems
               </h2>
               <p className='mt-4 text-gray-600'>
-                SKY INNOVATIONS IT SERVICES L.L.C is a forward-thinking
+                NASA TECK INNOVATIONS IT SERVICES is a forward-thinking
                 technology company dedicated to providing cutting-edge software
                 development solutions. We specialize in crafting innovative
                 digital experiences through a blend of creativity, technical
-                expertise, and a customer-first approach. At SKY INNOVATIONS IT
-                SERVICES L.L.C, we offer a wide range of services, including
+                expertise, and a customer-first approach. At NASA TECK INNOVATIONS IT
+                SERVICES, we offer a wide range of services, including
                 custom web and mobile application development, full-stack
                 development, and UI/UX design products.
               </p>

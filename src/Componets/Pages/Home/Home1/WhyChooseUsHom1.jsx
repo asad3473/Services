@@ -67,12 +67,12 @@ const WhyChooseUsHom1 = () => {
       <div className='container mx-auto px-4 relative'>
         {/* Heading */}
         <div className='text-center mb-12'>
-          <h6 className=' text-2xl sm:text-4xl font-bold text-white'>Why Partner with Us</h6>
+          <h6 className='text-2xl sm:text-4xl font-bold text-white'>Why Partner with Us</h6>
           <h2 className='text-xl text-gray-300'>Smarter Tech, Stronger Results</h2>
         </div>
 
         {/* Custom Navigation Icons */}
-        <div className='absolute z-10  flex gap-3 text-white 
+        <div className='absolute z-10 flex gap-3 text-white 
           -bottom-8 left-1/2 transform -translate-x-1/2
           sm:bottom-8 sm:left-auto sm:right-8 sm:translate-x-0 
           md:top-14 md:bottom-auto'>
@@ -80,12 +80,11 @@ const WhyChooseUsHom1 = () => {
           <div className='swiper-button-prev-custom flex items-center justify-center p-2 sm:p-3 bg-gradient-to-br from-[#61dafb] to-blue-500 rounded-md sm:rounded-full cursor-pointer hover:from-[#59a0b4]'>
             <FaArrowLeft />
           </div>
-          <div className='swiper-button-prev-custom flex items-center justify-center p-2 sm:p-3 bg-gradient-to-br from-[#61dafb] to-blue-500 rounded-md sm:rounded-full cursor-pointer hover:from-[#59a0b4]'>
+          <div className='swiper-button-next-custom flex items-center justify-center p-2 sm:p-3 bg-gradient-to-br from-[#61dafb] to-blue-500 rounded-md sm:rounded-full cursor-pointer hover:from-[#59a0b4]'>
             <FaArrowRight />
           </div>
 
         </div>
-
 
         {/* Swiper */}
         <Swiper
@@ -111,18 +110,17 @@ const WhyChooseUsHom1 = () => {
                 className='flex flex-col justify-between h-full p-6 bg-black border border-white/20 rounded-lg backdrop-blur-md text-white shadow-md ease-in transition-all duration-500 hover:bg-gradient-to-br hover:from-[#61dafb]/30 hover:bg-[#008bd0] hover:-translate-y-2 hover:shadow-xl group cursor-pointer'
                 data-aos='fade-up'
               >
-                <div className=' flex sm:justify-center text-start sm:text-center justify-start sm:items-center flex-col'>
+                <div className='flex sm:justify-center text-start sm:text-center justify-start sm:items-center flex-col'>
                   <div className='mb-4'>
                     <img src={item.icon} alt='icon' className='w-12 h-12 rounded-full' />
                   </div>
-                  <h3 className='text-xl sm:text-2xl font-semibold mb-2  group-hover:text-black'>
+                  <h3 className='text-xl sm:text-2xl font-semibold mb-2 group-hover:text-black'>
                     {item.title}
                   </h3>
                   <p className='sm:text-xl text-md'>{item.description}</p>
                 </div>
               </div>
             </SwiperSlide>
-
           ))}
         </Swiper>
 

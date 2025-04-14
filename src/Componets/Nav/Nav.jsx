@@ -13,7 +13,7 @@ const Navbar = () => {
 
   // Navigation Links Array
   const navLinks = [
-    { path: "/", label: "Homee" },
+    { path: "/", label: "Home" },
     { path: "/services", label: "Service" },
     { path: "/project", label: "Project" },
     { path: "/contact", label: "Contact" },
