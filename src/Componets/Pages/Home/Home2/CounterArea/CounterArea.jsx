@@ -44,7 +44,7 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Mughees Ur Rehman',
+    name: 'Imran Farooq',
     role: 'Devops & Cloud Engineer',
     image: mughees,
     socials: {

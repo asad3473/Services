@@ -6,9 +6,27 @@ import { TbUxCircle, TbSeo, TbWriting } from 'react-icons/tb';
 import { RiFlutterFill } from 'react-icons/ri';
 import { MdAnimation } from 'react-icons/md';
 import { LiaDigitalTachographSolid } from 'react-icons/lia';
-import Hovimg from '../../../images/project1.png';
-import Hovimg2 from './../../../images/projects-3.png';
-import Hovimg3 from './../../../images/projects-4.png';
+// import Hovimg from '../../../images/project1.png';
+// import Hovimg2 from './../../../images/projects-3.png';
+// import Hovimg3 from './../../../images/projects-4.png';
+import web from './../../../images/web.avif';
+import ai from './../../../images/ai.avif';
+import video from './../../../images/videoedit.avif';
+import app from './../../../images/app.avif';
+import content from './../../../images/content.avif';
+import seo from './../../../images/seo.avif';
+import wordpress from './../../../images/wordpress.avif';
+import lead from './../../../images/lead.avif';
+import shopify from './../../../images/shopify.avif';
+import graphics from './../../../images/graphics.avif';
+import cold from './../../../images/cold.avif';
+import block from './../../../images/blockchain.avif';
+import sale from './../../../images/sales.avif';
+import animation from './../../../images/animation.avif';
+
+
+
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useLocation } from 'react-router-dom';
@@ -20,63 +38,24 @@ const servicesData = [
     title: 'Web Development',
     description: 'Professional Web Designer, I specialize in creating modern, responsive, My goal is to transform your ideas into a digital reality.',
     link: 'ecom',
-    HovImg: Hovimg,
+    HovImg: web,
   },
   {
-    id: 2,
-    icon: <FaConnectdevelop size={35} />,
-    title: 'Shopify Development',
-    description: 'Web Developer, I offer comprehensive web development services tailored to meet the specific needs of businesses and individuals.',
-    link: 'webdes',
-    HovImg: Hovimg2,
+    id: 12,
+    icon: <FaPython size={35} />,
+    title: 'AI / Machine Learning',
+    description: 'Specialized in AI and Machine Learning, I develop intelligent systems using Python to automate tasks, analyze data, and deliver predictive solutions for businesses.',
+    link: 'single-services.html',
+    HovImg: ai,
   },
+
   {
     id: 3,
     icon: <RiFlutterFill size={35} />,
     title: 'App Development',
     description: 'I offer professional Flutter development services that enable you to build beautiful, high-performance, and natively compiled applications.',
     link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
-  {
-    id: 4,
-    icon: <LiaDigitalTachographSolid size={35} />,
-    title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing services designed to enhance your online presence, attract and engage your target audience.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
-  {
-    id: 5,
-    icon: <TbSeo size={35} />,
-    title: 'SEO',
-    description: 'SEO services designed to enhance your online presence, improve search engine rankings, and drive targeted traffic to your website.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
-  {
-    id: 6,
-    icon: <TbWriting size={35} />,
-    title: 'Content Writing',
-    description: 'High-quality content writing services that captivate your audience, communicate your message effectively, and drive engagement.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
-  {
-    id: 7,
-    icon: <FaConnectdevelop size={35} />,
-    title: 'Full Stack Development',
-    description: 'As a seasoned Full Stack Developer, I provide end-to-end web development services, covering both front-end and back-end development.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
-  {
-    id: 8,
-    icon: <FaLaravel size={35} />,
-    title: 'Laravel',
-    description: 'Laravel Developer, I offer professional Laravel development services tailored to build powerful, scalable, and secure web applications.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
+    HovImg: app,
   },
   {
     id: 9,
@@ -84,7 +63,41 @@ const servicesData = [
     title: 'Word Press Development',
     description: 'WordPress Developer, I specialize in creating custom, high-performance websites using the world’s most popular content management.',
     link: 'single-services.html',
-    HovImg: Hovimg3,
+    HovImg: wordpress,
+  },
+  {
+    id: 5,
+    icon: <TbSeo size={35} />,
+    title: 'SEO',
+    description: 'SEO services designed to enhance your online presence, improve search engine rankings, and drive targeted traffic to your website.',
+    link: 'single-services.html',
+    HovImg: seo,
+  },
+  {
+    id: 6,
+    icon: <TbWriting size={35} />,
+    title: 'Content Writing',
+    description: 'High-quality content writing services that captivate your audience, communicate your message effectively, and drive engagement.',
+    link: 'single-services.html',
+    HovImg: content,
+  },
+ 
+  {
+    id: 8,
+    icon: <FaLaravel size={35} />,
+    title: 'Laravel',
+    description: 'Laravel Developer, I offer professional Laravel development services tailored to build powerful, scalable, and secure web applications.',
+    link: 'single-services.html',
+    HovImg: web,
+  },
+
+  {
+    id: 4,
+    icon: <LiaDigitalTachographSolid size={35} />,
+    title: 'Digital Marketing',
+    description: 'Comprehensive digital marketing services designed to enhance your online presence, attract and engage your target audience.',
+    link: 'single-services.html',
+    HovImg: sale,
   },
   {
     id: 10,
@@ -92,31 +105,25 @@ const servicesData = [
     title: 'Graphics Designing',
     description: 'I offer creative graphic design services that help businesses visually communicate their message and stand out from the competition.',
     link: 'single-services.html',
-    HovImg: Hovimg3,
+    HovImg: graphics,
   },
+
   {
-    id: 11,
-    icon: <TbUxCircle size={35} />,
-    title: 'UI/UX Designing',
-    description: 'UI/UX Designer, I specialize in creating user-centered designs that deliver intuitive, engaging, and seamless digital experiences.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
+    id: 2,
+    icon: <FaConnectdevelop size={35} />,
+    title: 'Shopify Development',
+    description: 'Web Developer, I offer comprehensive web development services tailored to meet the specific needs of businesses and individuals.',
+    link: 'webdes',
+    HovImg: shopify,
   },
-  {
-    id: 12,
-    icon: <FaPython size={35} />,
-    title: 'Python',
-    description: 'Python Developer, I provide comprehensive Python development services that help businesses build reliable, scalable applications.',
-    link: 'single-services.html',
-    HovImg: Hovimg3,
-  },
+
   {
     id: 13,
     icon: <MdAnimation size={35} />,
     title: '2d & 3d Animations',
     description: 'Expert 2D and 3D animation services designed to captivate your audience and convey your message in a visually compelling way.',
     link: 'single-services.html',
-    HovImg: Hovimg3,
+    HovImg: animation,
   },
   {
     id: 14,
@@ -124,8 +131,52 @@ const servicesData = [
     title: 'Lead Generation',
     description: 'Lead generation services designed to help you attract, engage, and convert high-quality leads into loyal customers.',
     link: 'single-services.html',
-    HovImg: Hovimg3,
+    HovImg: lead,
   },
+
+
+  {
+    id: 14,
+    icon: <SiGoogleads size={35} />,
+    title: 'Cold Calling',
+    description: 'Professional cold calling strategies to reach potential clients, build relationships, and boost conversion rates effectively.',
+    link: 'single-services.html',
+    HovImg: cold,
+  },
+  {
+    id: 11,
+    icon: <TbUxCircle size={35} />,
+    title: 'UI/UX Designing',
+    description: 'UI/UX Designer, I specialize in creating user-centered designs that deliver intuitive, engaging, and seamless digital experiences.',
+    link: 'single-services.html',
+    HovImg: graphics,
+  },
+  {
+    id: 15,
+    icon: <SiGoogleads size={35} />,
+    title: 'Video Editing',
+    description: 'High-quality video editing services to craft compelling content that grabs attention and communicates your message clearly.',
+    link: 'single-services.html',
+    HovImg: video,
+  },
+  {
+    id: 16,
+    icon: <SiGoogleads size={35} />,
+    title: 'Sales Marketing/Email-Marketing',
+    description: 'Result-driven marketing campaigns through emails and sales funnels to increase engagement, leads, and sales.',
+    link: 'single-services.html',
+    HovImg: sale,
+  },
+  {
+    id: 17,
+    icon: <SiGoogleads size={35} />,
+    title: 'Blockchain',
+    description: 'Innovative blockchain solutions to enhance transparency, security, and efficiency in your digital operations.',
+    link: 'single-services.html',
+    HovImg: block,
+  },
+
+
 ];
 
 const ServicItem = () => {
@@ -188,11 +239,15 @@ const ServicItem = () => {
             ))}
           </div>
 
-          {/* Modal */}
           {isModalOpen && selectedService && (
-            <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-2">
-              <div className="bg-gradient-to-br from-[#61dafb] to-blue-500 w-full max-w-4xl max-h-[90vh] rounded-lg shadow-xl text-black relative p-4 overflow-y-auto">
-                {/* Close Button */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-2"
+              onClick={closeModal}
+            >
+              <div
+                className="bg-gradient-to-br from-[#61dafb] to-blue-500 w-full max-w-4xl max-h-[90vh] rounded-lg shadow-xl text-black relative p-4 overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <button
                   onClick={closeModal}
                   className="absolute top-3 right-4 text-white text-2xl hover:text-red-600"
@@ -229,6 +284,7 @@ const ServicItem = () => {
               </div>
             </div>
           )}
+
         </div>
       </section>
     </div>
