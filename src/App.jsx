@@ -1,19 +1,36 @@
-import Navbar from './Componets/Nav/Nav';
-import './App.css'
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home1 from './Componets/Pages/Home/Home1/Home1';
-import Contact from './Componets/Pages/Contact/Contact';
-import Project from './Componets/Pages/Project/Project';
-import ServiceSection from './Componets/Pages/ServiceSection/ServiceSection';
-import ScrollToTop from 'react-scroll-to-top';
-import About from './Componets/Pages/About/About';
-import TermAndConditions from './Componets/Pages/Termandcondition/TermAndConditions';
-import PrivacyPolicy from './Componets/Pages/PrivacyPolicy/PrivacyPolicy';
+import { lazy, Suspense, useRef, useState } from 'react';
+import Navbar from './Componets/Nav/Nav';
+import ScrollToTop from './Componets/ScrollToTop';
+import UseCloseOnBodyClick from './Componets/UseCloseOnBodyClick';
+
+// Lazy-loaded route components
+const Home1 = lazy(() => import('./Componets/Pages/Home/Home1/Home1'));
+const Contact = lazy(() => import('./Componets/Pages/Contact/Contact'));
+const Project = lazy(() => import('./Componets/Pages/Project/Project'));
+const ServiceSection = lazy(() => import('./Componets/Pages/ServiceSection/ServiceSection'));
+const About = lazy(() => import('./Componets/Pages/About/About'));
+const TermAndConditions = lazy(() => import('./Componets/Pages/Termandcondition/TermAndConditions'));
+const PrivacyPolicy = lazy(() => import('./Componets/Pages/PrivacyPolicy/PrivacyPolicy'));
+
 function App() {
+  const navbarRef = useRef(null);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const closeAll = () => {
+    setIsNavbarOpen(false);
+    // Add other close states here if needed (e.g. setIsModalOpen(false))
+  };
+
+  UseCloseOnBodyClick([navbarRef], closeAll);
+
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar ref={navbarRef} isOpen={isNavbarOpen} setIsOpen={setIsNavbarOpen} />
+
+      <Suspense fallback={<div className="text-center text-white py-10">Loading...</div>}>
         <Routes>
           <Route path='/' element={<Home1 />} />
           <Route path='/contact' element={<Contact />} />
@@ -24,13 +41,8 @@ function App() {
           <Route path='/terms-condition' element={<TermAndConditions />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         </Routes>
-        <ScrollToTop
-          smooth
-          color='white'
-          className='bg-gradient-to-br from-[#61dafb] to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 grid place-items-center rounded-[50%]'
-        />
-      </BrowserRouter>
-    </>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

@@ -13,7 +13,7 @@ const Wellcome = () => {
 
   return (
     <div
-      className='relative min-h-screen flex flex-col justify-center items-center p-4 bg-cover bg-center font-ui-sans-serif'
+      className='relative h-[70vh] md:h-[90vh] flex flex-col justify-center items-center p-4 bg-cover bg-center font-ui-sans-serif'
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div

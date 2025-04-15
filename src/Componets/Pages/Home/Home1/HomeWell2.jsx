@@ -11,7 +11,7 @@ const HomeWell2 = () => {
 
   return (
     <div
-      className='relative w-full h-screen flex items-center justify-center text-center px-4 font-ui-sans-serif'
+      className='relative w-full h-[70vh] md:h-[90vh] flex items-center justify-center text-center px-4 font-ui-sans-serif'
       style={{
         backgroundImage: `url(${backgroundImage2})`,
         backgroundSize: 'cover',
